@@ -68,11 +68,13 @@ exports.read = function(req, res) {
  */
 exports.find = function(req, res) { 
   var query,
+    select,
     limit = 20,
     skip = 0,
     sort = 'start_time';
 
   req.checkQuery('find', 'Invalid find query').optional().isJSON();
+  req.checkQuery('select', 'Invalid select query').optional().isJSON();
   req.checkQuery('limit', 'Invalid limit value').optional().isInt();
   req.checkQuery('skip', 'Invalid skip value').optional().isInt();
   req.checkQuery('sort', 'Invalid sort field').optional().isIn(['start_time', 'probe_cc']);
@@ -84,6 +86,9 @@ exports.find = function(req, res) {
     query = Report.find();
   }
 
+  if (req.query.select) {
+    select = req.query.select; 
+  }
   if (req.query.limit) {
     limit = parseInt(req.query.limit);
   }
@@ -102,6 +107,9 @@ exports.find = function(req, res) {
   }
   if (skip) {
     query = query.skip(skip);
+  }
+  if (select) {
+    query.select(select);
   }
 
 	query.exec(function(err, reports) {
