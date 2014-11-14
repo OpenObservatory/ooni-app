@@ -87,7 +87,7 @@ exports.find = function(req, res) {
   }
 
   if (req.query.select) {
-    select = req.query.select; 
+    select = JSON.parse(req.query.select); 
   }
   if (req.query.limit) {
     limit = parseInt(req.query.limit);
