@@ -25,7 +25,10 @@ header {
   background-color: #1d88ca;
 }
 
-header h1 {
+header h1 a {
+  color: #fff;
+}
+header h1 a:hover {
   color: #fff;
 }
 
