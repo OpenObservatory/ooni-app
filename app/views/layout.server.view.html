@@ -44,13 +44,13 @@
 </head>
 
 <body class="ng-cloak">
-	<header data-ng-include="'/modules/core/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
+	<header data-ng-include="'/modules/core/views/header.client.view.html'"></header>
 	<section class="content">
 		<section class="container">
 			{% block content %}{% endblock %}
 		</section>
 	</section>
-
+	<footer data-ng-include="'/modules/core/views/footer.client.view.html'"></footer>
 	<!--Embedding The User Object-->
 	<script type="text/javascript">
 		var user = {{ user | json | safe }};

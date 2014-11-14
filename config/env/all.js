@@ -7,6 +7,7 @@ module.exports = {
 		keywords: 'censorship, OONI'
 	},
 	port: process.env.PORT || 3000,
+  validator: {},
 	templateEngine: 'swig',
 	sessionSecret: 'MEAN',
 	sessionCollection: 'sessions',
@@ -15,6 +16,7 @@ module.exports = {
 			css: [
 				'public/lib/bootstrap/dist/css/bootstrap.css',
 				'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+				'public/lib/font-awesome/css/font-awesome.css',
 			],
 			js: [
 				'public/lib/angular/angular.js',

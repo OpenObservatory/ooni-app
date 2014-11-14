@@ -13,3 +13,81 @@
 .ng-valid.ng-dirty {
 	border-color: #78FA89;
 }
+
+/* OONI light blue */
+/* #8dd8f8 */
+/* OONI dark blue */
+/* #1d88ca */
+
+header {
+  height: 256px;
+  padding: 115px 16px 0;
+  background-color: #1d88ca;
+}
+
+header h1 {
+  color: #fff;
+}
+
+footer {
+  background-color: #eee;
+  height: 159px;
+  padding-top: 30px;
+  color: #6c6c6c;
+}
+
+footer img {
+  height: 100px;
+  float: right;
+}
+
+.resource {
+  display: block;
+  /* border: 2px solid #fff; */
+ 
+}
+
+.resource-tile-wrapper {
+  padding: 10px; 
+}
+
+.resource-tile {
+  color: #fff;
+  background: #8dd8f8;
+  -moz-box-shadow: 1px 1px 6px 2px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 1px 1px 6px 2px rgba(0,0,0,0.2);
+  box-shadow: 1px 1px 6px 2px rgba(0,0,0,0.2);
+}
+.resource-tile>a {
+  padding-bottom: 50%;
+  display: block;
+  color: #fff;
+}
+
+.resource-tile>a .resource-title {
+  opacity: 1.0;
+}
+
+.resource-tile>a:hover .resource-icon{
+  opacity: 1.0;
+}
+
+.resource-icon {
+  float: right;
+  padding-right: 10px;
+  opacity: 0.8;
+}
+.resource-icon i {
+  font-size: 17em;
+  padding-top: 20px;
+}
+
+.resource-footer {
+  position: absolute;
+  bottom: 20px;
+  padding-left: 15px;
+}
+
+.resource-title {
+  font-size: 36px;  
+}

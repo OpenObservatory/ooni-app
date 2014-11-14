@@ -9,6 +9,7 @@ var fs = require('fs'),
 	express = require('express'),
 	morgan = require('morgan'),
 	bodyParser = require('body-parser'),
+  expressValidator = require('express-validator'),
 	session = require('express-session'),
 	compress = require('compression'),
 	methodOverride = require('method-override'),
@@ -80,6 +81,8 @@ module.exports = function(db) {
 		extended: true
 	}));
 	app.use(bodyParser.json());
+  // enable validator
+  app.use(expressValidator(config.validator));
 	app.use(methodOverride());
 
 	// CookieParser should be above session

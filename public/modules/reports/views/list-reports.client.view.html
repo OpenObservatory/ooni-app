@@ -1,0 +1,19 @@
+<section data-ng-controller="ReportsController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Reports</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="report in reports" data-ng-href="#!/reports/{{report._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				<span data-ng-bind="report.start_time * 1000 | date:'medium'"></span>
+				<span data-ng-bind="report.probe_cc"></span>
+				<span data-ng-bind="report.probe_asn"></span>
+				<span data-ng-bind="report.test_name"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="report.name"></h4>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!reports.$resolved || reports.length">
+    	No Reports yet, why don't you <a href="/#!/reports/create">create one</a>?
+    </div>
+</section>

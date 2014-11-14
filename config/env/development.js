@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://reports.ooni.nu/ooni-mean-dev',
+	db: 'mongodb://reports.ooni.nu/ooni',
 	app: {
 		title: 'OONI MEAN - Development Environment'
 	},

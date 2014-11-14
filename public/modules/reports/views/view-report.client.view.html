@@ -1,0 +1,13 @@
+<section data-ng-controller="ReportsController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1 data-ng-bind="report.test_name"></h1>
+	</div>
+  <ul>
+    <li data-ng-repeat="(name, value) in report.header">{{name}}: {{value}}</li>
+  </ul>
+  <div data-ng-repeat="measurement in report.measurements">
+    <ul>
+      <li data-ng-repeat="(name, value) in measurement">{{name}}: {{value}}</li>
+    </ul>
+  </div>
+</section>
