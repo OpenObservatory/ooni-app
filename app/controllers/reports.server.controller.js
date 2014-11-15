@@ -42,12 +42,8 @@ exports.reportByID = function(req, res, next, id) {
     if (skip) {
       query = query.skip(skip);
     }
-    console.log('2');
-    console.log(query);
     query.exec(function(err, measurements) {
-      console.log("loool");
 		  if (err) return next(err);
-      console.log("Got back some measurements...");
       if (!measurements) measurements = [];
       report.measurements = measurements;
       req.report = report;
