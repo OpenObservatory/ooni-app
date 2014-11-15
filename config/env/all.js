@@ -29,7 +29,8 @@ module.exports = {
 				'public/lib/angular-ui-router/release/angular-ui-router.js',
 				'public/lib/angular-ui-utils/ui-utils.js',
 				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
-				'public/lib/ngInfiniteScroll/build/ng-infinite-scroll.js'
+				'public/lib/ngInfiniteScroll/build/ng-infinite-scroll.js',
+				'public/lib/iso-3166-country-codes-angular/src/iso-3166-country-codes-angular.js'
 			]
 		},
 		css: [

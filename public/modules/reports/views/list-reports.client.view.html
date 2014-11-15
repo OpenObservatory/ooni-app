@@ -1,7 +1,7 @@
 <section data-ng-controller="ReportsController" 
          data-ng-init="find()" class="reports-list">
     <div class="list-group" data-infinite-scroll="loadNextPage()">
-        <a data-ng-repeat="report in reports" data-ng-href="#!/reports/{{report._id}}" class="list-group-item">
+        <a data-ng-repeat="report in reports" data-ng-href="#!/reports/view/{{report._id}}" class="list-group-item">
           <span class="report_time label label-default">{{report.start_time * 1000 | date:'medium'}}</span>
           <span class="flag-icon flag-icon-{{report.probe_cc | lowercase }}">{{probe_cc}}</span>
           <span class="probe_asn">{{report.probe_asn}}</span>

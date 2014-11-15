@@ -1,0 +1,13 @@
+<section data-ng-controller="SearchReportsController">
+<form role="form">
+  <div class="form-group">
+    <label for="country">Country</label>
+    <select ng-model="report_country" ng-options="country.name for country in countries"></select>
+  </div>
+  <div class="form-group">
+    <label for="query">query</label>
+    <input type="text" data-ng-model="query" class="form-control" id="query" placeholder='{"field": "value"}'>
+  </div>
+  <button type="submit" class="btn btn-default" data-ng-click="search()">Search</button>
+</form>
+</section>

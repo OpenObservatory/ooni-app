@@ -16,6 +16,7 @@
 		"angular-ui-router": "~0.2.11",
     "font-awesome": "",
     "flag-icon-css": "",
-    "ngInfiniteScroll": ""
+    "ngInfiniteScroll": "",
+    "iso-3166-country-codes-angular": ""
 	}
 }
