@@ -1,5 +1,6 @@
-<section data-ng-controller="ReportsController" data-ng-init="find()" when-scrolled="loadNextPage()" class="reports-list">
-    <div class="list-group">
+<section data-ng-controller="ReportsController" 
+         data-ng-init="find()" class="reports-list">
+    <div class="list-group" data-infinite-scroll="loadNextPage()">
         <a data-ng-repeat="report in reports" data-ng-href="#!/reports/{{report._id}}" class="list-group-item">
           <span class="report_time label label-default">{{report.start_time * 1000 | date:'medium'}}</span>
           <span class="flag-icon flag-icon-{{report.probe_cc | lowercase }}">{{probe_cc}}</span>
@@ -7,14 +8,6 @@
           <span class="list-group-item-heading">{{report.test_name}}</span>
         </a>
     </div>
-    <!-- <div class="arrows"> -->
-    <!--   <div class="previous" data-ng-show="previous_page_number"> -->
-    <!--     <a href="#!/reports/page/{{previous_page_number}}">previous</a> -->
-    <!--   </div> -->
-    <!--   <div class="next" data-ng-show="next_page_number"> -->
-    <!--     <a href="#!/reports/page/{{next_page_number}}">next</a> -->
-    <!--   </div> -->
-    <!-- </div> -->
     <div class="alert alert-warning text-center" data-ng-hide="!reports.$resolved || reports.length">
     	No Reports :(
     </div>
