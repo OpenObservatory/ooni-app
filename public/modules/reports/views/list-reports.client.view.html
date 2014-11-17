@@ -1,13 +1,44 @@
 <section data-ng-controller="ReportsController" 
          data-ng-init="find()" class="reports-list">
-    <div class="list-group" data-infinite-scroll="loadNextPage()">
-        <a data-ng-repeat="report in reports" data-ng-href="#!/reports/view/{{report._id}}" class="list-group-item">
-          <span class="report_time label label-default">{{report.start_time * 1000 | date:'medium'}}</span>
-          <span class="flag-icon flag-icon-{{report.probe_cc | lowercase }}">{{probe_cc}}</span>
-          <span class="probe_asn">{{report.probe_asn}}</span>
-          <span class="list-group-item-heading">{{report.test_name}}</span>
-        </a>
-    </div>
+    <table id="table" class="table table-hover table-mc-light-blue" data-ng-show="reports.length" data-infinite-scroll="loadNextPage()">
+      <thead>
+        <tr>
+          <th>Country</th>
+          <th>Measurement date</th>
+          <th>AS Number</th>
+          <th>IP Adress</th>
+          <th>Test name</th>
+          <th>Software</th>
+          <th>Measurement count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-ng-repeat="report in reports" data-ng-href="#!/reports/view/{{report._id}}">
+          <td data-title="country">
+            <i class="flag-icon flag-icon-{{report.probe_cc | lowercase }}"></i>
+            {{(report.probe_cc | isoCountry).name}}
+          </td>
+          <td data-title="measurement-date">
+            {{report.start_time * 1000 | date:'medium'}}
+          </td>
+          <td data-title="as-number">
+            {{report.probe_asn}}
+          </td>
+          <td data-title="ip-address">
+            {{report.probe_ip}}
+          </td>
+          <td data-title="test-name">
+            {{report.test_name}} - {{report.test_version}}
+          </td>
+          <td data-title="software">
+            {{report.software_name}} - {{report.software_version}}
+          </td>
+          <td data-title="measurement-count">
+            unimplemented
+          </td>
+        </tr>
+      </tbody>
+    </table>
     <div class="alert alert-warning text-center" data-ng-hide="!reports.$resolved || reports.length">
     	No Reports :(
     </div>

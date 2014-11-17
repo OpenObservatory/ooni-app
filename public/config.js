@@ -6,7 +6,7 @@ var ApplicationConfiguration = (function() {
 	var applicationModuleName = 'ooni-mean';
   var applicationModuleVendorDependencies = ['ngResource', 'ngCookies',
     'ngAnimate',  'ngTouch',  'ngSanitize',  'ui.router', 'ui.bootstrap',
-    'ui.utils', 'infinite-scroll', 'iso-3166-country-codes'];
+    'ui.utils', 'infinite-scroll', 'ng-iso-countries'];
 
 	// Add a new vertical module
 	var registerModule = function(moduleName, dependencies) {

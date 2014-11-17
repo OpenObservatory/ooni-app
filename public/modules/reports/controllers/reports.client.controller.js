@@ -29,6 +29,7 @@ angular.module('reports').controller('ReportsController', ['$scope', '$statePara
 		};
 
     $scope.loadNextPage = function() {
+      // implement setting ?current_page=XXX
       if ($scope.stop_loading) return;
       $scope.page_number += 1;
       Reports.query({'limit': $scope.items_per_page,

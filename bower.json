@@ -17,6 +17,6 @@
     "font-awesome": "",
     "flag-icon-css": "",
     "ngInfiniteScroll": "",
-    "iso-3166-country-codes-angular": ""
+    "ng-iso-countries": "0.0.2"
 	}
 }
