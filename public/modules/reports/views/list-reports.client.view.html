@@ -13,28 +13,42 @@
         </tr>
       </thead>
       <tbody>
-        <tr data-ng-repeat="report in reports" data-ng-href="#!/reports/view/{{report._id}}">
+        <tr data-ng-repeat="report in reports">
           <td data-title="country">
-            <i class="flag-icon flag-icon-{{report.probe_cc | lowercase }}"></i>
-            {{(report.probe_cc | isoCountry).name}}
+            <a data-ng-href="#!/reports/view/{{report._id}}">
+              <i class="flag-icon flag-icon-{{report.probe_cc | lowercase }}"></i>
+              {{(report.probe_cc | isoCountry).name}}
+            </a>
           </td>
           <td data-title="measurement-date">
-            {{report.start_time * 1000 | date:'medium'}}
+            <a data-ng-href="#!/reports/view/{{report._id}}">
+              {{report.start_time * 1000 | date:'medium'}}
+            </a>
           </td>
           <td data-title="as-number">
-            {{report.probe_asn}}
+            <a data-ng-href="#!/reports/view/{{report._id}}">
+              {{report.probe_asn}}
+            </a>
           </td>
           <td data-title="ip-address">
-            {{report.probe_ip}}
+            <a data-ng-href="#!/reports/view/{{report._id}}">
+              {{report.probe_ip}}
+            </a>
           </td>
           <td data-title="test-name">
-            {{report.test_name}} - {{report.test_version}}
+            <a data-ng-href="#!/reports/view/{{report._id}}">
+              {{report.test_name}} - {{report.test_version}}
+            </a>
           </td>
           <td data-title="software">
-            {{report.software_name}} - {{report.software_version}}
+            <a data-ng-href="#!/reports/view/{{report._id}}">
+              {{report.software_name}} - {{report.software_version}}
+            </a>
           </td>
           <td data-title="measurement-count">
-            unimplemented
+            <a data-ng-href="#!/reports/view/{{report._id}}">
+              unimplemented
+            </a>
           </td>
         </tr>
       </tbody>
