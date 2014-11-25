@@ -41,5 +41,4 @@ angular.module('reports').controller('ReportsController', ['$scope', '$statePara
         $scope.reports = $scope.reports.concat(new_reports);
       });
     };
-
 }]);
