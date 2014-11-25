@@ -12,6 +12,7 @@ angular.module('reports').controller('ReportsController', ['$scope', '$statePara
       $scope.query = JSON.parse(params.find);
     }
     $scope.page_number = 0;
+    $scope.measurement_page_number = 0;
 
 		// Find a list of Reports
 		$scope.find = function() {
@@ -23,10 +24,26 @@ angular.module('reports').controller('ReportsController', ['$scope', '$statePara
 
 		// Find existing Report
 		$scope.findOne = function() {
+      $scope.report = {measurements: [], header: {}};
 			$scope.report = Reports.get({ 
 				reportId: $stateParams.reportId
 			});
 		};
+
+    $scope.loadMeasurementNextPage = function() {
+      // implement setting ?current_page=XXX
+      if ($scope.stop_loading) return;
+      $scope.measurement_page_number += 1;
+      Reports.get({'limit': $scope.items_per_page,
+                   'skip': $scope.measurement_page_number*$scope.items_per_page,
+				            'reportId': $stateParams.reportId
+                    },
+                     function(report) {
+        var new_measurements = report.measurements;
+        if (new_measurements.length === 0) $scope.stop_loading = true;
+        $scope.report.measurements = $scope.report.measurements.concat(new_measurements);
+      });
+    };
 
     $scope.loadNextPage = function() {
       // implement setting ?current_page=XXX

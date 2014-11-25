@@ -25,7 +25,6 @@ exports.reportByID = function(req, res, next, id) {
 		if (err) return next(err);
 		if (!report_header) return next(new Error('Failed to load Report ' + id));
     report.header = report_header;
-    console.log('1');
     query = Measurement.find({'report_id': report_header._id});
     if (req.query.limit) {
       limit = parseInt(req.query.limit);

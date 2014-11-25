@@ -10,15 +10,17 @@
     </div>
   </dl>
   <h2>Measurements</h2>
-  <div data-ng-repeat="measurement in report.measurements">
-    <dl class="dl-horizontal">
-      <div data-ng-repeat="(name, value) in measurement" ng-if="name != '_id'">
-        <dt>{{name}}</dt>
-        <dd>{{value}}</dd>
-        <!-- <div data-display-entry -->
-        <!--      data-display-entry-name="name" -->
-        <!--      data-display-entry-value="value"> -->
-        <!-- </div> -->
-    </dl>
+  <div data-infinite-scroll="loadMeasurementNextPage()">
+    <div data-ng-repeat="measurement in report.measurements">
+      <dl class="dl-horizontal">
+        <div data-ng-repeat="(name, value) in measurement" ng-if="name != '_id'">
+          <dt>{{name}}</dt>
+          <dd>{{value}}</dd>
+          <!-- <div data-display-entry -->
+          <!--      data-display-entry-name="name" -->
+          <!--      data-display-entry-value="value"> -->
+          <!-- </div> -->
+      </dl>
+    </div>
   </div>
 </section>
