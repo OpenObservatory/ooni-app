@@ -1,5 +1,6 @@
-# OONI MEAN
-OONI, but much meaner!
+# What
+
+A web interface for searching and viewing reports collected with OONI.
 
 # Getting started
 Requires:
