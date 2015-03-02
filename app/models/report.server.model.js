@@ -25,6 +25,7 @@ var ReportSchema = new Schema({
   start_time: {type: Number},
   test_name: {type: String},
   test_version: {type: String},
+  measurements: {type: Array}
   //measurements: [{type: ObjectId, ref: 'Measurement'}]
 });
 

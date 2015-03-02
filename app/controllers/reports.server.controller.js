@@ -25,29 +25,31 @@ exports.reportByID = function(req, res, next, id) {
 		if (err) return next(err);
 		if (!report_header) return next(new Error('Failed to load Report ' + id));
     report.header = report_header;
-    query = Measurement.find({'report_id': report_header._id});
-    if (req.query.limit) {
-      limit = parseInt(req.query.limit);
-    }
-    if (req.query.skip) {
-      skip = parseInt(req.query.skip);
-    }
+    // query = Measurement.find({'report_id': report_header._id});
+    // if (req.query.limit) {
+    //   limit = parseInt(req.query.limit);
+    // }
+    // if (req.query.skip) {
+    //   skip = parseInt(req.query.skip);
+    // }
     // if (sort) {
     //   query.sort(sort);
     // }
-    if (limit !== 0) {
-      query = query.limit(limit);
-    }
-    if (skip) {
-      query = query.skip(skip);
-    }
-    query.exec(function(err, measurements) {
-		  if (err) return next(err);
-      if (!measurements) measurements = [];
-      report.measurements = measurements;
-      req.report = report;
-      next();
-    });
+    // if (limit !== 0) {
+    //   query = query.limit(limit);
+    // }
+    // if (skip) {
+    //   query = query.skip(skip);
+    // }
+
+    req.report = report;
+    next();
+
+    // query.exec(function(err, measurements) {
+		// if (err) return next(err);
+    //   if (!measurements) measurements = [];
+    //   report.measurements = measurements;
+    // });
 	});
 };
 
